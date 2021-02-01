@@ -21,7 +21,7 @@ def start(update, context):
                               f"times - *14, 7* days before, *1* day before and *on the day* itself "
                               f"at *10 AM*. Please use keyboard buttons to interact with me or "
                               f"use /commands to show list of available commands",
-                              reply_markup=kb_markup, parse_mode='Markdown')
+                              reply_markup=kb_markup, parse_mode='MarkdownV2')
     logger.info("User %s started the conversation.", user.first_name)
 
 
