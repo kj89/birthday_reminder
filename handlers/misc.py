@@ -15,7 +15,7 @@ def start(update, context):
     kb = [[KeyboardButton('/add'), KeyboardButton('/delete')],
           [KeyboardButton('/list')]]
     kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=False, resize_keyboard=True)
-    update.message.reply_text(f"Hi {user.first_name} and welcome to @{BOT_USERNAME}!\n"
+    update.message.reply_text(f"Hi {user.first_name} and welcome to @{BOT_USERNAME}.\n"
                               f"I will remind you about birthdays of your family and friends."
                               f"By default the bot will remind you an important date several "
                               f"times - *14, 7* days before, *1* day before and *on the day* itself "
