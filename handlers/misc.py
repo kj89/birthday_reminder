@@ -20,7 +20,8 @@ def start(update, context):
                               f"By default the bot will remind you an important date several "
                               f"times - *14, 7* days before, *1* day before and *on the day* itself "
                               f"at *10 AM*. Please use keyboard buttons to interact with me or "
-                              f"use /commands to show list of available commands", reply_markup=kb_markup)
+                              f"use /commands to show list of available commands",
+                              reply_markup=kb_markup, parse_mode='Markdown')
     logger.info("User %s started the conversation.", user.first_name)
 
 
