@@ -12,7 +12,7 @@ def start(update, context):
     """Send message on `/start`."""
     # Get user that sent /start and log his name
     user = update.message.from_user
-    notify_days = {', '.join([str(elem) for elem in NOTIFICATION_DAYS])}
+    notify_days = ", ".join([str(el) for el in NOTIFICATION_DAYS])
     kb = [[KeyboardButton('/add'), KeyboardButton('/delete')],
           [KeyboardButton('/list')]]
     kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=False, resize_keyboard=True)
