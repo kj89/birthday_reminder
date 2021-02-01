@@ -3,6 +3,7 @@ from datetime import date, datetime
 from telegram import TelegramError
 from telegram.ext import ConversationHandler
 from telegram import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
+from config import BOT_USERNAME
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +15,7 @@ def start(update, context):
     kb = [[KeyboardButton('/add'), KeyboardButton('/delete')],
           [KeyboardButton('/list')]]
     kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=False, resize_keyboard=True)
-    update.message.reply_text(f"Hi {user.first_name} and welcome to @Remindm3_bot!\n"
+    update.message.reply_text(f"Hi {user.first_name} and welcome to @{BOT_USERNAME}!\n"
                               f"I will remind you about birthdays of your family and friends. "
                               f"Please use keyboard buttons to interact with me or "
                               f"use /commands to show list of available commands", reply_markup=kb_markup)
