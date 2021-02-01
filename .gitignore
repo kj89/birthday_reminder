@@ -1,4 +1,6 @@
 # Default ignored files
 /.idea
 /__pycache__
+/jobs/__pycache__
+/handlers/__pycache__
 config.py
