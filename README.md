@@ -19,10 +19,10 @@ Python packages used for this project (latest available versions in the time whe
 - `sqlalchemy 1.3.22` - to store and manage data in _postgresql_ database
  
 ## Bot commands
-`/start` - _initialize bot_
-`/add` - _add reminder to database_
-`/delete` - _remove reminder from database_
-`/list` - _show list of reminders saved in database_
-`/notify_start` - _turn on notifications_
-`/notify_stop` - _turn off notifications_
-`/notify_status` - _get current notification status_
+- `/start` - _initialize bot_
+- `/add` - _add reminder to database_
+- `/delete` - _remove reminder from database_
+- `/list` - _show list of reminders saved in database_
+- `/notify_start` - _turn on notifications_
+- `/notify_stop` - _turn off notifications_
+- `/notify_status` - _get current notification status_
