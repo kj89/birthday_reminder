@@ -3,7 +3,7 @@ from datetime import date, datetime
 from telegram import TelegramError
 from telegram.ext import ConversationHandler
 from telegram import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
-from config import BOT_USERNAME
+from config import BOT_USERNAME, NOTIFICATION_DAYS, NOTIFICATION_TIME
 
 logger = logging.getLogger(__name__)
 
@@ -12,15 +12,16 @@ def start(update, context):
     """Send message on `/start`."""
     # Get user that sent /start and log his name
     user = update.message.from_user
+    notify_days = {', '.join([str(elem) for elem in NOTIFICATION_DAYS])}
     kb = [[KeyboardButton('/add'), KeyboardButton('/delete')],
           [KeyboardButton('/list')]]
     kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=False, resize_keyboard=True)
     update.message.reply_text(f"Hi {user.first_name} and welcome to @{BOT_USERNAME}!\n"
-                              f"I will remind you about birthdays of your family and friends."
-                              f"By default the bot will remind you an important date several "
-                              f"times - <b>14, 7</b> days before, <b>1</b> day before and <b>on the day</b> itself "
-                              f"at <b>10 AM</b>. Please use keyboard buttons below to interact with me or "
-                              f"use /commands to show list of available commands",
+                              f"I will remind you about birthdays of your family and friends. By default the bot "
+                              f"will remind you an important date several times - <b>{notify_days}</b> days before, "
+                              f"<b>1</b> day before and <b>on the day</b> itself at <b>{NOTIFICATION_TIME}:00</b>. "
+                              f"Please use keyboard buttons below to interact with me or use /commands to show "
+                              f"list of available commands",
                               reply_markup=kb_markup, parse_mode='html')
     logger.info("User %s started the conversation.", user.first_name)
 
