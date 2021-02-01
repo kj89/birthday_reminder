@@ -14,15 +14,21 @@ Configuration for notifications can be set in `config.py` file
 ## Prerequisites
 For this specific project I used python version ___3.8.2___
 Python packages used for this project (latest available versions in the time when bot was written) :
-- `pytz 2020.5` - this library is used to get accurate timezone
-- `python-telegram-bot 13.1` - this library provides a pure Python interface for the [Telegram Bot API](https://core.telegram.org/bots/api)
-- `sqlalchemy 1.3.22` - to store and manage data in _postgresql_ database
+* `pytz 2020.5` - this library is used to get accurate timezone
+* `python-telegram-bot 13.1` - this library provides a pure Python interface for the [Telegram Bot API](https://core.telegram.org/bots/api)
+* `sqlalchemy 1.3.22` - to store and manage data in _postgresql_ database
  
 ## Bot commands
-- `/start` - _initialize bot_
-- `/add` - _add reminder to database_
-- `/delete` - _remove reminder from database_
-- `/list` - _show list of reminders saved in database_
-- `/notify_start` - _turn on notifications_
-- `/notify_stop` - _turn off notifications_
-- `/notify_status` - _get current notification status_
+`/start` - _initialize bot_
+\
+`/add` - _add reminder to database_
+\
+`/delete` - _remove reminder from database_
+\
+`/list` - _show list of reminders saved in database_
+\
+`/notify_start` - _turn on notifications_
+\
+`/notify_stop` - _turn off notifications_
+\
+`/notify_status` - _get current notification status_
