@@ -16,8 +16,10 @@ def start(update, context):
           [KeyboardButton('/list')]]
     kb_markup = ReplyKeyboardMarkup(kb, one_time_keyboard=False, resize_keyboard=True)
     update.message.reply_text(f"Hi {user.first_name} and welcome to @{BOT_USERNAME}!\n"
-                              f"I will remind you about birthdays of your family and friends. "
-                              f"Please use keyboard buttons to interact with me or "
+                              f"I will remind you about birthdays of your family and friends."
+                              f"By default the bot will remind you an important date several "
+                              f"times - *14, 7* days before, *1* day before and *on the day* itself "
+                              f"at *10 AM*. Please use keyboard buttons to interact with me or "
                               f"use /commands to show list of available commands", reply_markup=kb_markup)
     logger.info("User %s started the conversation.", user.first_name)
 
