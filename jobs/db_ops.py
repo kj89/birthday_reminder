@@ -43,8 +43,8 @@ def update_reminders(reminder_id):
     reminder = session.query(Reminder).filter_by(reminder_id=reminder_id).first()
     n_remind_date = reminder.remind_date.replace(year=reminder.remind_date.year + 1)
     reminder.remind_date = n_remind_date
+    reminder.age += 1
     session.commit()
-    logger.info(f"Updated remind_date to {reminder.remind_date} for {reminder.name}")
 
 
 def get_all_chats():
