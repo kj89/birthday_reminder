@@ -5,7 +5,6 @@
 import logging
 from telegram.ext import CommandHandler
 from jobs.db_ops import get_reminders
-from handlers.misc import date_to_str
 from datetime import date
 
 logger = logging.getLogger(__name__)
@@ -17,7 +16,7 @@ def select_reminders(chat_id):
     result = {}
     for record in reminders:
         remind_id = record.reminder_id
-        remind_date = date_to_str(record.remind_date)
+        remind_date = record.remind_date.strftime("%d.%m")
         name = record.name
         age = record.age
         days_till_bd = (record.remind_date-today).days

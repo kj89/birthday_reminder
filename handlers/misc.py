@@ -95,10 +95,6 @@ def str_to_date(event_date):
     return result_date
 
 
-def date_to_str(event_date):
-    return event_date.strftime("%d.%m.%Y")
-
-
 def get_age(event_date):
     today = date.today()
     age = today.year - event_date.year + ((today.month, today.day) > (event_date.month, event_date.day))
