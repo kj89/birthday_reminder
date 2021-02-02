@@ -33,7 +33,7 @@ def print_reminders(update, context):
     msg = ''
     reminders = select_reminders(chat)
     for k, v in reminders.items():
-        msg += f"{v['remind_date']} (days left: {v['days_till_bd']}) | {v['name']} | age: {v['age']} *(id:{k})*\n"
+        msg += f"{v['remind_date']} (days left: {v['days_till_bd']}) *{v['name']}* will turn {v['age']} *(id:{k})*\n"
     if msg:
         update.message.reply_text(f'*📆 List of reminders*\n{msg}', parse_mode='markdown')
     else:

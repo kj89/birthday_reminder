@@ -58,11 +58,11 @@ def send_notify(context):
         name = v['name']
         age = v['age']
         if days_till_bd in NOTIFICATION_DAYS:
-            msg += f"*{name}* turns *{age}* in *{days_till_bd}* days!\n\n"
+            msg += f"🍉 *{name}* turns *{age}* in *{days_till_bd}* days!\n"
         if days_till_bd == 1:
-            msg += f"Tomorrow *{name}* turns *{age}*!\n\n"
+            msg += f"🦄 Tomorrow *{name}* turns *{age}*!\n"
         if days_till_bd == 0:
-            msg += f"🎉 🥳 Hooray! Today *{name}* calebrates his/her *{age}* birthday!\n\n"
+            msg += f"🥳 Hooray! Today *{name}* calebrates his/her *{age}* birthday!\n"
             update_reminders(k)
         if days_till_bd < 0:
             update_reminders(k)
